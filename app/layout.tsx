@@ -1,6 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Navber from './components/Navber'
+import Footer from './components/Footer'
+import clsx from 'clsx'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={clsx(inter.className, "bg-coffee text-light")}>
+        <Navber/>
+        {children}
+        <Footer/>
+        </body>
     </html>
   )
 }
